@@ -1,2 +1,16 @@
-<h1> Search got triggered. The user is searching with the phrase <%= @phrase %> .Next step is to create table of all results  </h1>
+<h1> Search Results  </h1>
+
+<table>
+    <tr>
+        <th> folder_id </th>
+        <th> name </th>
+    </tr>
+
+    <% @seaches.each do |search| %>
+        <tr>
+            <td><%= search.folder_id %></td>
+            <td><%= search.name %></td>
+        </tr>
+    <% end %>
+</table>
 
