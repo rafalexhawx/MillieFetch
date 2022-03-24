@@ -4,9 +4,9 @@ class FoldersController < ApplicationController
   
   def search
     if params[:query]
-      @seaches = Folder.all
+      @searches = Folder.all
     else
-      @phrase = "no happened"
+      @searches = "no happened"
     end
   end
 end

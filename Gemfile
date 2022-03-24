@@ -72,4 +72,6 @@ group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "rspec-rails"
+  gem "rspec-expectations"
+  gem "rspec-core"
 end

@@ -4,21 +4,35 @@ Given('I am on the main page') do
 end
 
 When('I enter {string} in the search bar') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  puts string
+  fill_in :query, :with => string 
 end
 
 When('I click search') do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button "Search"
 end
 
-Then('I should be redirected to search page') do
-  pending # Write code here that turns the phrase above into concrete actions
+Then('I should be redirected to {string} page') do |string|
+  #@searches = "something happened" why does this doesn't re-assign the instance variable
+  ## I need to find which I am on and see that is current.path
+  #visit 'search'
+  expected_path = URI.parse("/folders" + '/' + string).path
+  expect(page.current_path).to eq(expected_path)
 end
 
 Then('I should see {string}') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  # find things in the page fields, buttons, 
+  page.should have_content string
 end
 
 Then('I should see {string} names listed in the results') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  page.should have_content string
+end
+
+Then('I should not see {string}') do |string|
+    page.should have_no_content string
+  end
+  
+Then('I should not see {string} names in the results') do |string|
+    pending # Write code here that turns the phrase above into concrete actions
 end

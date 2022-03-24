@@ -295,6 +295,8 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  rspec-core
+  rspec-expectations
   rspec-rails
   selenium-webdriver
   sprockets-rails
