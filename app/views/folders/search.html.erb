@@ -1,16 +1,21 @@
 <h1> Search Results  </h1>
+<br/>
 
-<table>
+<table  class="table table-striped table-hover table-bordered">
+    <thead  class="table-primary text-center" style="width: 100%">
     <tr>
-        <th> folder_id </th>
-        <th> name </th>
+        <th> Folder Id </th>
+        <th> Title of the Folder </th>
     </tr>
+    </thead>
 
-    <% @seaches.each do |search| %>
+<tbody  class="text-center" style="width: 100%">
+    <% @searches.each do |search| %>
         <tr>
             <td><%= search.folder_id %></td>
             <td><%= search.name %></td>
         </tr>
     <% end %>
+    </tbody>
 </table>
 
