@@ -135,6 +135,8 @@ GEM
     digest (3.1.0)
     digest (3.1.0-java)
     erubi (1.10.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     ffi (1.15.5-java)
     ffi (1.15.5-x64-mingw32)
@@ -236,6 +238,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (2.6.0)
+      activerecord (>= 6.0.4)
+      activesupport (>= 6.0.4)
+      i18n
     regexp_parser (2.2.1)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -315,11 +321,13 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   debug
+  faker
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  ransack
   rspec-rails
   selenium-webdriver
   sprockets-rails

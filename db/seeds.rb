@@ -28,3 +28,14 @@ folders = [{:folder_id => 1, :name => "Donald Trump's Foreign Policy"},
 folders.each do |folder|
     Folder.create!(folder)
 end
+Category.create(name: "Journal")
+Category.create(name: "Research")
+Category.create(name: "Tabloid")
+Category.create(name: "Animation")
+Category.create(name: "Movie Review")
+
+
+
+50.times do |x|
+    Article.create(title: Faker::Lorem.sentences(number: 1), body: Faker::Lorem.paragraph(sentence_count: 5), category_id: Faker::Number.between(from: 1, to: Category.count))
+end

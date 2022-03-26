@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Welcome to Bush Research</h1>
+<br/>
+<%= render 'articles/search_form' %>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-primary text-center" style="width: 100%">
+    <tr>
+      <th><%= sort_link(@q, :category_id, "Folder Category", default_order: :desc) %></th>
+      <th><%= sort_link(@q, :title, "Folder Title", default_order: :desc) %></th>
+      <th><%= sort_link(@q, :body, "Document Contents", default_order: :desc) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <br/>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.category.name, article.category %></td>
+        <td><%= link_to article.title, article %></td>
+        <td><%= article.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+<%= link_to "New article", new_article_path %>
