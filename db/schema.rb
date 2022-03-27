@@ -14,6 +14,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_26_165945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "ScowcroftCollection_1", id: false, force: :cascade do |t|
+    t.integer "OA_ID_Number"
+    t.text "ID"
+    t.text "Status"
+    t.text "Folder"
+    t.text "record_group_collection"
+    t.text "collection_office_of_origin"
+    t.text "series"
+    t.text "box_type"
+    t.text "subseries"
+    t.text "note_field"
+    t.integer "box_number"
+  end
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
