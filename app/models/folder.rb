@@ -1,9 +1,7 @@
 class Folder < ApplicationRecord
     #acts_as_ferret :fields => [:name]
     #scope :find_with_ferret, -> (name) {where("name like ?", "%#{name}")}
-    searchable do
-        text :name
-    end
+    
 
     def self.search_folders se_query
         
