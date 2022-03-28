@@ -3,10 +3,7 @@ class FoldersController < ApplicationController
   end
   
   def search
-    if params[:query]
-      @searches = Folder.all
-    else
-      @searches = "no happened"
-    end
+    @searches = Folder.search_folders(params[:query])
   end
+
 end

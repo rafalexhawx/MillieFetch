@@ -34,5 +34,5 @@ Then('I should not see {string}') do |string|
   end
   
 Then('I should not see {string} names in the results') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+   page.should have_no_content string
 end

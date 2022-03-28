@@ -27,6 +27,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# try installing ferret and act_as_ferret for search engine application
+gem "ferret"
+gem "acts_as_ferret"
+gem "sunspot_rails"
+gem "sunspot_solr"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -74,4 +80,5 @@ group :test do
   gem "rspec-rails"
   gem "rspec-expectations"
   gem "rspec-core"
+  gem "rails-controller-testing"
 end
