@@ -4,7 +4,7 @@ Feature: Search folders relevant to a topic
     So that I find relevant information to a seach topic of interest
     I should be able to enter the query and search to see relevant results
 
-@wip
+#@wip
 
 Scenario: Show all the folder names related to Donald Trump's Foreign policy
     Given I am on the main page

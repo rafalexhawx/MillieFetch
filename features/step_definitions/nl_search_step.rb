@@ -36,3 +36,4 @@ Then('I should not see {string}') do |string|
 Then('I should not see {string} names in the results') do |string|
    page.should have_no_content string
 end
+

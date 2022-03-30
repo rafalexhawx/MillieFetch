@@ -3,7 +3,12 @@ class FoldersController < ApplicationController
   end
   
   def search
-    @searches = Folder.search_folders(params[:query])
+    if params[:query].strip.empty?
+      flash[:notice]  = "Enter valid query"
+      redirect_to action: "index"
+    elsif
+      @searches = Folder.search_folders(params[:query])
+    end
   end
 
 end
