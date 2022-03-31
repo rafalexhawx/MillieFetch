@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+#require 'spec_helper'
 RSpec.describe "Folders", type: :request do
   describe "GET /search" do
     it "should assign the model search results to @searches" do

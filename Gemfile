@@ -81,4 +81,5 @@ group :test do
   gem "rspec-expectations"
   gem "rspec-core"
   gem "rails-controller-testing"
+  gem 'simplecov', require: false
 end
