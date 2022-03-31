@@ -28,6 +28,7 @@ gem "ferret"
 gem "acts_as_ferret"
 gem "sunspot_rails"
 gem "sunspot_solr"
+gem 'activerecord-session_store'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"

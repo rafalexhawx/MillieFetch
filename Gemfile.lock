@@ -54,6 +54,12 @@ GEM
     activerecord (7.0.2.3)
       activemodel (= 7.0.2.3)
       activesupport (= 7.0.2.3)
+    activerecord-session_store (2.0.0)
+      actionpack (>= 5.2.4.1)
+      activerecord (>= 5.2.4.1)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 2.0.8, < 3)
+      railties (>= 5.2.4.1)
     activestorage (7.0.2.3)
       actionpack (= 7.0.2.3)
       activejob (= 7.0.2.3)
@@ -203,6 +209,7 @@ GEM
     minitest (5.15.0)
     msgpack (1.4.5)
     msgpack (1.4.5-java)
+    multi_json (1.15.0)
     multi_test (0.1.2)
     net-imap (0.2.3)
       digest
@@ -380,6 +387,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  activerecord-session_store
   acts_as_ferret
   bootsnap
   capybara
