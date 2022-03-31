@@ -1,0 +1,12 @@
+<details>
+    <summary>My Cart</summary>
+        <ul>
+            <% @cart.each do |search| %>
+            <li>
+                <%= search.name %>
+                <%= link_to 'Remove from cart', remove_from_cart_path(search.folder_id), method: :delete %>
+                <br>
+            </li>
+            <% end %>
+        </ul>
+</details>

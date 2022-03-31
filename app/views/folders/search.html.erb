@@ -1,8 +1,12 @@
 <h1> Search Results  </h1>
 <br/>
-<%= debug session[:cart] %>
 
-<table  class="table table-striped table-hover table-bordered">
+<%= render 'folders/cart_form' %>
+<br>
+<br>
+
+
+<table class="table table-striped table-hover table-bordered">
     <thead  class="table-primary text-center" style="width: 100%">
     <tr>
         <th> Folder Id </th>
@@ -16,7 +20,12 @@
         <tr>
             <td><%= search.folder_id %></td>
             <td><%= search.name %></td>
-            <td><%= link_to 'add to cart', add_to_cart_path(search.id), method: :post %></td>
+            
+                <% if @cart.include?(search.folder_id)%>
+                    <p> This folder is in your cart. </p>
+                <% else%>
+                    <td><%= link_to 'add to cart', controller: 'folders', action: 'add_to_cart', id: search.folder_id, method: :post %></td>
+                <% end %>
         </tr>
     <% end %>
     </tbody>

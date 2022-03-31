@@ -1,30 +1,47 @@
 class FoldersController < ApplicationController
   before_action :initialize_session
-  before_action :increment_visit_count, only: %i[index, about, search]
+  before_action :increment_visit_count, only: %i[index, about]
+  before_action :load_cart
+  
   
   def index
     @folders = Folder.all
+    # @searches = Folder.search_folders(params[:query])
+
   end
   
   def search
     @searches = Folder.search_folders(params[:query])
-    @folders = Folder.all
+
   end
   
   def about
   end
   
   def add_to_cart
-    session[:cart] << params[:id]
-    redirect_to :back
+    id = params[:id].to_i
+    session[:cart] << id unless[:cart].include?(id)
+    session[:cart] = session[:cart].uniq
+    redirect_to root_path
+  end
+  
+  def remove_from_cart
+    id = params[:id].to_i
+    session[:cart].delete(id)
+    redirect_to root_path
   end
   
   private 
   
   def initialize_session
     session[:visit_count] ||= 0
-    session[:cart] ||= []
+    session[:cart] ||=  []
   end 
+  
+  def load_cart
+    @cart = Folder.find(session[:cart])
+  end
+    
   
   def increment_visit_count
     session[:visit_count] += 1
