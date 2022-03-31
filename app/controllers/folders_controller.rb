@@ -12,6 +12,7 @@ class FoldersController < ApplicationController
   
   def search
     @searches = Folder.search_folders(params[:query])
+    session[:result] = @searches
 
   end
   
@@ -22,13 +23,13 @@ class FoldersController < ApplicationController
     id = params[:id].to_i
     session[:cart] << id unless[:cart].include?(id)
     session[:cart] = session[:cart].uniq
-    redirect_to root_path
+    redirect_to root_path, notice: "The folder is added to your cart!"
   end
   
   def remove_from_cart
     id = params[:id].to_i
     session[:cart].delete(id)
-    redirect_to root_path
+    redirect_to root_path, notice: "The folder is removed from your cart!"
   end
   
   private 
