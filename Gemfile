@@ -24,6 +24,11 @@ gem "turbo-rails"
 gem 'ransack'
 gem 'faker'
 gem 'carrierwave'
+gem "ferret"
+gem "acts_as_ferret"
+gem "sunspot_rails"
+gem "sunspot_solr"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -76,4 +81,7 @@ group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "rspec-rails"
+  gem "rspec-expectations"
+  gem "rspec-core"
+  gem "rails-controller-testing"
 end
