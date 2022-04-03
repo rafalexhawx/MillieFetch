@@ -10,15 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_16_004019) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_195005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contents", force: :cascade do |t|
+    t.text "content_path"
+    t.bigint "folder_id", null: false
+    t.bigint "metadatum_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_contents_on_folder_id"
+    t.index ["metadatum_id"], name: "index_contents_on_metadatum_id"
+  end
+
   create_table "folders", force: :cascade do |t|
-    t.integer "folder_id"
-    t.text "name"
+    t.text "folder_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "metadata", force: :cascade do |t|
+    t.integer "FOIA_ID"
+    t.bigint "folder_id", null: false
+    t.text "local_id"
+    t.text "status"
+    t.text "record_collection"
+    t.text "office_origin"
+    t.text "series"
+    t.text "subseries"
+    t.text "box_type"
+    t.integer "box_number"
+    t.text "note_field"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_metadata_on_folder_id"
+  end
+
+  add_foreign_key "contents", "folders"
+  add_foreign_key "contents", "metadata"
+  add_foreign_key "metadata", "folders"
 end
