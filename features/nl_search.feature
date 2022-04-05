@@ -8,11 +8,11 @@ Feature: Search folders relevant to a topic
 
 Scenario: Show all the folder names related to Donald Trump's Foreign policy
     Given I am on the main page
-    When I enter "Trump's foreign policy" in the search bar
+    When I enter "soviet's loss of power in eastern europe" in the search bar
     And I click search
     Then I should be redirected to "search" page
-    And I should see "Donald Trump's Foreign Policy"
-    And I should see "President Donald J. Trump's Foreign Policy Puts America First"
-    And I should see "The Hill: The Memo: Tillerson Flap Puts Spotlight ON TRUMP's FOreign POLICY moves" names listed in the results
-    And I should not see "G20 SUbsidies TOK oil, gas and coal production china"
-    And I should not see "U.S. views on global climate change" names in the results
+    And I should see "Soviet Power Collapse in Eastern Europe - Strategic Arms Control (June 1990)"
+    And I should see "USSR Collapse: U.S - Soviet Relations Thru 1991 (October 1990)"
+    And I should see "Soviet Power Collapse in Eastern Europe (July - August 1990)" names listed in the results
+    And I should not see "Presidential Meetings - Memorandum of Conversations 05/03/91 - 06/28/91"
+    And I should not see "Desert Shield/Desert Storm (August 1990) Part I" names in the results

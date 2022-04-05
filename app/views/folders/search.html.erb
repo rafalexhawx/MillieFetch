@@ -2,13 +2,13 @@
 
 <table>
     <tr>
-        <th> folder_id </th>
-        <th> name </th>
+        <th> id </th>
+        <th> folder_title </th>
     </tr>
     <% @searches.each do |search| %>
         <tr>
-            <td><%= search.folder_id %></td>
-            <td><%= search.name %></td>
+            <td><%= search.id %></td>
+            <td><%= search.folder_title %></td>
         </tr>
     <% end %>
 </table>

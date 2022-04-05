@@ -16,17 +16,32 @@ class Folder < ApplicationRecord
         # stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into']
         # phrases = se_query.split(' ')
         #searches = self.where(folder_id: folder_id).order("array_position(array[#{folder_id.join(',')}], folder_id)")
+        
+        ###### This code we may want to move it as seperate preprocessing function
+        stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into', 'of']
+        words = se_query.split(' ').map{ |x| x.downcase}
+        stripped_words = []
+        words.each do |word|
+            word.split("'").each do |word_split|
+                stripped_words.append(word_split)
+            end
+        end
 
-        stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into']
-        phrases = se_query.split(' ').map{ |x| x.downcase}
+        phrases = []
+        stripped_words.each do |stripped_word|
+            if stripped_word.length > 1
+                phrases.append(stripped_word)
+            end
+        end
+
         phrases = phrases - stop_words
-
+        #######################################################################
         folder_ids = []
         phrases.each do |phrase|
             search_phrase = '.*' + phrase + '.*'
-            folder_with_phrase = self.where("name ~* ?", search_phrase)
+            folder_with_phrase = self.where("folder_title ~* ?", search_phrase)
             folder_with_phrase.each do |search|
-                folder_ids.append(search.folder_id)
+                folder_ids.append(search.id)
             end
         end
 
@@ -34,8 +49,8 @@ class Folder < ApplicationRecord
         folder_ids = folder_ids.sort_by {|k, v| -v}.to_h
         folder_ids = folder_ids.keys
         
-        searches = self.where(folder_id:folder_ids)
-        searches = folder_ids.collect {|id| searches.detect {|x| x.folder_id == id}}
+        searches = self.where(id:folder_ids)
+        searches = folder_ids.collect {|id| searches.detect {|x| x.id == id}}
 
         return searches
 
