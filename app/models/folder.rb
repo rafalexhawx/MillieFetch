@@ -18,8 +18,9 @@ class Folder < ApplicationRecord
         #searches = self.where(folder_id: folder_id).order("array_position(array[#{folder_id.join(',')}], folder_id)")
 
         ###### This code we may want to move it as seperate preprocessing function
-        stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into', 'of']
+        stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into', 'of', 'and', 'or']
         words = se_query.split(' ').map{ |x| x.downcase}
+        #words = se_query.split(' ')
         stripped_words = []
         words.each do |word|
             word.split("'").each do |word_split|
@@ -38,8 +39,13 @@ class Folder < ApplicationRecord
         #######################################################################
         folder_ids = []
         phrases.each do |phrase|
-            search_phrase = '.*' + phrase + '.*'
-            folder_with_phrase = self.where("folder_title ~* ?", search_phrase)
+            #search_phrase = phrase + '.*'
+            #search_phrase = ' ' + phrase + ' '
+            folder_with_phrase = self.where("(folder_title ~* ?) or (folder_title ~* ?) or (folder_title ~* ?)", 
+                ' ' + phrase + ' ', phrase + ' ', ' ' + phrase)
+            #folder_with_phrase = self.where("folder_title =~ ?", search_phrase)
+            # folder_with_phrase = self.where("(folder_title like ?) or (folder_title like ?) or (folder_title like ?)", 
+            #     '% ' + phrase + ' %', phrase + ' %', '% ' + phrase)
             folder_with_phrase.each do |search|
                 folder_ids.append(search.id)
             end
