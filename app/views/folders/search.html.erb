@@ -1,0 +1,29 @@
+<h1> Search Results  </h1>
+
+<table>
+    <tr>
+        <th> FOIA_ID </th>
+        <th> FOLDER TITLE </th>
+        <th> LOCAL ID </th>
+        <th> RECORD COLLECTION </th>
+        <th> OFFICE ORIGIN </th>
+        <th> SERIES </th>
+        <th> SUB SERIES </th>
+        <th> BOX TYPE </th>
+        <th> BOX NUMBER </th>
+    </tr>
+    <% @searches.each do |search| %>
+        <tr>
+            <td><%= search.metadatum.FOIA_ID %></td>
+            <td><%= search.folder_title %></td>
+            <td><%= search.metadatum.local_id %></td>
+            <td><%= search.metadatum.record_collection %></td>
+            <td><%= search.metadatum.office_origin %></td>
+            <td><%= search.metadatum.series %></td>
+            <td><%= search.metadatum.subseries %></td>
+            <td><%= search.metadatum.box_type %></td>
+            <td><%= search.metadatum.box_number %></td>
+        </tr>
+    <% end %>
+</table>
+
