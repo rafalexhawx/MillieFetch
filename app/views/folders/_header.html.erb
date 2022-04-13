@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to 'George W. Bush Library: Research Site', root_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <%= link_to 'Search', root_path, class:"nav-link" %>
+          </li>
+        
+          <li class="nav-item">
+            <%= link_to 'My Cart', root_path, class:"nav-link"%>
+          </li>
+          <li class="dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="dropdown-menu col-xs-12 " style= "white-space: nowrap;">
+              <% if @cart.empty? %>
+            <p> No items in cart.</p>
+              <% else %>
+              <ul>
+            <% @cart.each do |search| %>
+            <li>
+                <%= search.name %> - 
+                <%= link_to 'Remove from cart', remove_from_cart_path(search.folder_id), method: :delete %>
+                <br>
+            </li>
+            <% end %>
+        </ul>
+        <% end %>
+            </div>
+          </li>
+
+        
+        
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search inside the Site" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
