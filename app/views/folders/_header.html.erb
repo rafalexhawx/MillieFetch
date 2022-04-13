@@ -24,7 +24,7 @@
             <% @cart.each do |search| %>
             <li>
                 <%= search.folder_title %> - 
-                <%= link_to 'Remove from cart', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
+                <%= link_to 'Remove', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
                 <br>
             </li>
             <% end %>
