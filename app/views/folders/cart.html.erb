@@ -9,8 +9,8 @@
 <ul>
     <% @cart.each do |search| %>
     <li>
-        <%= search.name %> - 
-        <%= link_to 'Remove from cart', remove_from_cart_path(search.folder_id), method: :delete %>
+        <%= search.folder_title %> - 
+        <%= link_to 'Remove from cart', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
         <br>
     </li>
     <% end %>
