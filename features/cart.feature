@@ -1,5 +1,10 @@
 Feature: Cart feature which can store the folders that users want to download
 
+Scenario: The user can check the empty cart at first
+    Given The user is on the main page
+    When The user clicks the Cart button in the navigation bar
+    Then The user should see "No items in cart." in the cart
+
 Scenario: The user can add the folder into the cart
     Given The user is on the main page
     When The user enters "soviet" in the search bar
