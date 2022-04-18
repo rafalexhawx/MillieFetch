@@ -1,6 +1,11 @@
 <h1> Search Results  </h1>
-
-<table>
+<br/>
+<br>
+<%= link_to 'Go to the Search Page', root_path %>
+<br>
+<br>
+<table class="table table-striped table-hover table-bordered">
+    <thead  class="table-primary text-center" style="width: 100%">
     <tr>
         <th> FOIA_ID </th>
         <th> FOLDER TITLE </th>
@@ -11,7 +16,10 @@
         <th> SUB SERIES </th>
         <th> BOX TYPE </th>
         <th> BOX NUMBER </th>
+        <th> ADD </th>
     </tr>
+    </thead>
+    <tbody class="text-center" style="width: 100%">
     <% @searches.each do |search| %>
         <tr>
             <td><%= search.metadatum.FOIA_ID %></td>
@@ -23,7 +31,14 @@
             <td><%= search.metadatum.subseries %></td>
             <td><%= search.metadatum.box_type %></td>
             <td><%= search.metadatum.box_number %></td>
+                <% if @cart.include?(search.metadatum.folder_id)%>
+                    <p> This folder is in your cart. </p>
+                <% else%>
+                    <td>
+                        <%= link_to 'add to cart', controller: 'folders', action: 'add_to_cart', id: search.metadatum.folder_id, method: :post %></td>
+                <% end %>
         </tr>
     <% end %>
+    </tbody>
 </table>
 

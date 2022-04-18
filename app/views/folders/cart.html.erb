@@ -1,0 +1,27 @@
+
+<h1>My cart</h1>
+<br>
+<br>
+<% if @cart.empty? %>
+<br>
+    <p>No items in cart.</p>
+<% else %>
+<ul>
+    <% @cart.each do |search| %>
+    <li>
+        <%= search.folder_title %> - 
+        <%= link_to 'Remove from cart', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
+        <br>
+    </li>
+    <% end %>
+</ul>
+<% end %>
+
+
+<br>
+<br>
+
+<%= link_to 'Go to the Search', root_path %>
+
+<br>
+
