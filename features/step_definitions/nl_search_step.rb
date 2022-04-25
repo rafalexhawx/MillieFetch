@@ -21,19 +21,106 @@ Then('I should be redirected to {string} page') do |string|
 end
 
 Then('I should see {string}') do |string|
-  # find things in the page fields, buttons, 
-  page.should have_content string
+  contain = 0
+  #puts string
+  page_text = Nokogiri::HTML(page.body).text
+  page_data = Nokogiri::HTML.parse(page.body)
+  
+  while page_text.include? "Next"
+    str = string + "</td>"
+    if page_data.xpath('//td').to_s.split('<td>').include? str
+      contain = 1
+      print("entered here")
+      break
+    elsif
+      reset = 1
+      click_on "Next"
+      page_text = Nokogiri::HTML(page.body).text
+      page_data = Nokogiri::HTML.parse(page.body)
+    end
+  end
+  puts contain
+  expect(contain).to eq(1)
+  if reset
+    click_on "First"
+  end
 end
 
 Then('I should see {string} names listed in the results') do |string|
-  page.should have_content string
+  contain = 0
+  #puts string
+  page_text = Nokogiri::HTML(page.body).text
+  page_data = Nokogiri::HTML.parse(page.body)
+  
+  while page_text.include? "Next"
+    str = string + "</td>"
+    if page_data.xpath('//td').to_s.split('<td>').include? str
+      contain = 1
+      print("entered here")
+      break
+    elsif
+      reset = 1
+      click_on "Next"
+      page_text = Nokogiri::HTML(page.body).text
+      page_data = Nokogiri::HTML.parse(page.body)
+    end
+  end
+  puts contain
+  expect(contain).to eq(1)
+  if reset
+    click_on "First"
+  end
 end
 
 Then('I should not see {string}') do |string|
-    page.should have_no_content string
+  contain = 0
+  #puts string
+  page_text = Nokogiri::HTML(page.body).text
+  page_data = Nokogiri::HTML.parse(page.body)
+  
+  while page_text.include? "Next"
+    str = string + "</td>"
+    if page_data.xpath('//td').to_s.split('<td>').include? str
+      contain = 1
+      print("entered here")
+      break
+    elsif
+      reset = 1
+      click_on "Next"
+      page_text = Nokogiri::HTML(page.body).text
+      page_data = Nokogiri::HTML.parse(page.body)
+    end
   end
+  puts contain
+  expect(contain).to eq(0)
+  if reset
+    click_on "First"
+  end
+end
   
 Then('I should not see {string} names in the results') do |string|
-   page.should have_no_content string
+  contain = 0
+  #puts string
+  page_text = Nokogiri::HTML(page.body).text
+  page_data = Nokogiri::HTML.parse(page.body)
+  
+  while page_text.include? "Next"
+    str = string + "</td>"
+    if page_data.xpath('//td').to_s.split('<td>').include? str
+      contain = 1
+      print("entered here")
+      break
+    elsif
+      reset = 1
+      click_on "Next"
+      page_text = Nokogiri::HTML(page.body).text
+      page_data = Nokogiri::HTML.parse(page.body)
+    end
+  end
+  puts contain
+  expect(contain).to eq(0)
+  if reset
+    click_on "First"
+  end
 end
 

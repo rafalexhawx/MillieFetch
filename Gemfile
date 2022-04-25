@@ -28,10 +28,10 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # try installing ferret and act_as_ferret for search engine application
-gem "ferret"
-gem "acts_as_ferret"
-gem "sunspot_rails"
-gem "sunspot_solr"
+#gem "pagy"
+
+gem "kaminari"
+gem "nokogiri"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
