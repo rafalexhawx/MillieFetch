@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Milliefetch</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MillieFetch Upload</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>   
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>   
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body> 
+      <div class = "container" style = "padding-top:20px;">
+        <%= yield %>
+      </div>
   </body>
 </html>
+
+  

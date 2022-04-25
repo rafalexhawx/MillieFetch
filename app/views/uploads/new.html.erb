@@ -1,0 +1,113 @@
+
+<h2>Upload your document</h2>
+<div class="container">   
+<% if !@upload.errors.empty? %>   
+   <div>   
+         
+      <ul>   
+         <% @upload.errors.full_messages.each do |msg| %>   
+            <li><%= msg %></li>   
+         <% end %>   
+   <% end %> 
+ 
+  
+<div>   
+   <%= form_for @upload, html: { multipart: true } do |f| %> 
+      <br>
+      <%= f.label :Folder_Title %>   
+      <%= f.text_field :folder_title, list:'folder_title' %>  
+      <datalist id='folder_title'>
+      <option value="Presidential Meetings - Memorandum of Conversations 1/24/89 - 2/25/89">
+      <option value="Canada (Outgoing) 1989 - 19938">
+      <option value="Presidential Telephone Calls - Memorandum of Conversations 10/11/90 - 12/31/90">
+      </datalist>
+      <br><br>  
+      <%= f.label :FOIA_ID %>   
+      <%= f.text_field :FOIA_ID, list:'FOIA_ID' %> 
+      <datalist id='FOIA_ID'>
+      <option value="91107">
+      <option value="91108">
+      <option value="91112">
+      </datalist>
+      <br><br> 
+      <%= f.label :Local_ID %>   
+      <%= f.text_field :local_id, list:'local_id' %> 
+      <datalist id='local_id'>
+      <option value="91112-003">
+      <option value="91107-006">
+      <option value="91108-005">
+      </datalist>
+      <br><br> 
+      <%= f.label :status %>   
+      <!--<%= f.text_field :status %> -->
+      <%= f.text_field :status, list:'status' %>
+      <datalist id='status'>
+      <option value="2009-0275-S">
+      <option value="2009-0275-S; 2009-1293-F">
+      <option value="2009-0275-S; 2005-1012-F">
+      </datalist>
+      <br><br> 
+      <%= f.label :record_collection %>   
+      <%= f.text_field :record_collection,list:'record_collection' %>   
+      <datalist id='record_collection'>
+      <option value="George H.W. Bush Presidential Records">
+      </datalist>
+      <br><br> 
+      <%= f.label :office_origin%>   
+      <%= f.text_field :office_origin, list:'office_origin' %> 
+      <datalist id='office_origin'>
+      <option value="Scowcroft, Brent, Collection">
+      </datalist>
+      <br><br> 
+      <%= f.label :series %>   
+      <%= f.text_field :series,list:'series' %> 
+      <datalist id='series'>
+      <option value="Presidential Correspondence Files">
+      <option value="German Unification Files">
+      <option value="USSR Collapse Files"> 
+      <option value='USSR Chronological Files'>
+      </datalist>
+      <br><br> 
+      <%= f.label :subseries %>   
+      <%= f.text_field :subseries,list:"subseries" %>  
+      <datalist id='subseries'>
+      <option value="Presidential Memcons Files">
+      <option value="Presidential Telcon Files">
+      <option value="Head of State Message Files"> 
+      <option value='Chronological Files'>
+      <option value='U.S. - Soviet Relations Chronological Files'>
+      </datalist>
+      <br><br>
+      <%= f.label :box_type %>   
+      <%= f.text_field :box_type, list: 'box_type' %> 
+      <datalist id='box_type'>
+      <option value="H">
+      </datalist>
+      <br><br>
+      <%= f.label :box_number %>   
+      <%= f.text_field :box_number, list: 'box_number' %>
+      <datalist id='box_number'>
+      <option value="1">
+      <option value="2">
+      <option value="3"> 
+      <option value='4'>
+      </datalist>
+      <br><br>
+      <%= f.label :note_field %>   
+      <%= f.text_field :note_field, list:'note_field' %> 
+      <datalist id='note_field'>
+      <option value="Box 984, CF01729">
+      <option value="Box 983, CF01728">
+      <option value="91109-001 - 91109-004 Box 983 CF01728; 91109-005 - 91109-008 Box 982 CF01727"> 
+      <option value='Box 986 CF 01731'>
+      </datalist>
+      <br><br>
+      <%= f.label :attachment %>   
+      <%= f.file_field :attachment %>   
+      <br><br> 
+      <%= f.submit "Save" %>   
+   <% end %>   
+</div>   
+</div> 
+
+

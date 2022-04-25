@@ -1,0 +1,57 @@
+<h1>Millie Fetch Uploaded Documents</h1>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>  
+  
+<br />   
+  
+<%= button_to "New Upload", new_upload_path, class: "btn btn-primary"%>   
+<br />   
+<br />   
+  
+<table class = "table table-bordered table-striped", border="1">   
+   <thead>   
+      <tr>   
+         <th>FOIA ID</th>
+         <th>Folder Title</th>
+         <th>LOCAL ID</th>
+         <th>STATUS</th>
+         <th>RECORD COLLECTION</th>
+         <th>OFFICE ORIGIN</th>
+         <th>SERIES</th>
+         <th>SUBSERIES</th>
+         <th>BOX TYPE</th>
+         <th>BOX NUMBER</th>
+         <th>NOTE FIELD</th>
+         <th>Download Link</th>   
+         <th>Action</th>   
+      </tr>   
+   </thead>   
+      
+   <tbody>   
+      <% @uploads.each do |upload| %>   
+            
+         <tr>   
+            <td><%= upload.FOIA_ID %></td>  
+            <td><%= upload.folder_title %></td> 
+            <td><%= upload.local_id%></td> 
+            <td><%= upload.status %></td>
+            <td><%= upload.record_collection %></td>
+            <td><%= upload.office_origin %></td>
+            <td><%= upload.series %></td>
+            <td><%= upload.subseries %></td>
+            <td><%= upload.box_type %></td>
+            <td><%= upload.box_number %></td>
+            <td><%= upload.note_field %></td>
+            <td><%= link_to "Download", upload.attachment_url %></td>   
+            <td><%= button_to "Delete",  upload, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete the file?" %></td>   
+         </tr>     
+      <% end %>   
+   </tbody>   
+      
+</table>   
+
+
+

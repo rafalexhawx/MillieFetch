@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_195005) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_24_224819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +45,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_195005) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["folder_id"], name: "index_metadata_on_folder_id"
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.integer "FOIA_ID"
+    t.text "folder_title"
+    t.text "local_id"
+    t.text "status"
+    t.text "record_collection"
+    t.text "office_origin"
+    t.text "series"
+    t.text "subseries"
+    t.text "box_type"
+    t.integer "box_number"
+    t.text "note_field"
+    t.string "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "contents", "folders"
