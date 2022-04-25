@@ -1,18 +1,22 @@
 class FoldersController < ApplicationController
+  #include Pagy::Backend
   before_action :initialize_session
   before_action :increment_visit_count, only: %i[index, about]
   before_action :load_cart
   
   def index
-    @folders = Folder.all
+    #@folders = Folder.all
   end
   
   def search
     if params[:query].strip.empty?
-      flash[:notice]  = "Enter valid query"
-      redirect_to action: "index"
-    elsif
-      @searches = Folder.search_folders(params[:query])
+      #flash[:notice]  = "Enter valid query"
+      #redirect_to action: "index", notice: "Enter valid query"
+      redirect_to root_path, notice: "Enter valid query"
+    elsif  
+      search_results = Folder.search_folders(params[:query])
+      @searches = Kaminari.paginate_array(search_results).page(params[:page]).per(7)
+      #puts @searches
     end
   end
   
