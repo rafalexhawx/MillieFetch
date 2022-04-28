@@ -6,6 +6,7 @@ class FoldersController < ApplicationController
   
   def index
     #@folders = Folder.all
+
   end
   
   def search
@@ -21,6 +22,20 @@ class FoldersController < ApplicationController
   end
   
   def cart
+    @checkout = Folder.find(session[:cart])
+    respond_to do |format|
+      format.html
+      format.zip do
+        compressed_filestream = Zip::OutputStream.write_buffer do |zos|
+          @checkout.each do |check|
+            zos.put_next_entry "MillieFetch/Gemfile"
+            zos.print File.open("Gemfile", "r").read
+          end
+        end
+        compressed_filestream.rewind
+        send_data compressed_filestream.read, filename: "research.zip"
+      end
+    end
   end
   
   def add_to_cart

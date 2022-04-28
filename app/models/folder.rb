@@ -27,7 +27,8 @@ class Folder < ApplicationRecord
                 stripped_words.append(word_split)
             end
         end
-
+        
+        
         phrases = []
         stripped_words.each do |stripped_word|
             if stripped_word.length > 1

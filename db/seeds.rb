@@ -65,6 +65,25 @@ worksheets.each do |worksheet|
         note_field: row_cells[9],
         folder_id: Folder.maximum(:id)
     )
+    words = worksheet.rows[r][3].split(' ').map{ |x| x.downcase}
+    stripped_words = []
+    words.each do |word|
+        word.split("'").each do |word_split|
+            stripped_words.append(word_split)
+        end
+    end
+        
+    hash = Hash.new
+    stripped_words.each do |i_key|
+        if hash.include?(i_key)
+            hash[i_key].append(Folder.maximum(:id))
+        else
+            f_id = []
+            f_id.append(Folder.maximum(:id))
+            hash.store(i_key, f_id)
+        end
+    end
+
 
     Content.create!(
         content_path: '/file/' + row_cells[3] + '/sample.pdf',

@@ -352,6 +352,7 @@ DEPENDENCIES
   rspec-core
   rspec-expectations
   rspec-rails
+  rubyzip
   selenium-webdriver
   simple_xlsx_reader
   simplecov

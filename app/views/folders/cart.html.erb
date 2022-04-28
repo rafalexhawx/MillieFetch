@@ -11,6 +11,11 @@
     <li>
         <%= search.folder_title %> - 
         <%= link_to 'Remove from cart', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
+        <% search.metadatum.folder_id %>
+        
+        <br>
+        <br>
+        <%= link_to 'Checkout', folders_cart_path(format: :zip) %>
         <br>
     </li>
     <% end %>

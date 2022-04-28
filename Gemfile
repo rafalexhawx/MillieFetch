@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 #excel reader
 gem "simple_xlsx_reader"
+gem "rubyzip"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
