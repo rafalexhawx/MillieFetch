@@ -29,7 +29,7 @@ class FoldersController < ApplicationController
         compressed_filestream = Zip::OutputStream.write_buffer do |zos|
           @checkout.each do |check|
             zos.put_next_entry "MillieFetch/#{check.folder_title}.pdf"
-            zos.print File.open("db/files/#{check.metadatum.folder_id}.pdf", "r").read
+            zos.print File.open("public/assets/#{check.metadatum.folder_id}.pdf", "r").read
           end
         end
         compressed_filestream.rewind
