@@ -56,6 +56,7 @@ class Folder < ApplicationRecord
         folder_ids = folder_ids.keys
         
         searches = self.where(id:folder_ids).joins(:metadatum)
+        searches = searches.where(id:folder_ids).joins(:contents)
         searches = folder_ids.collect {|id| searches.detect {|x| x.id == id}}
 
         return searches
