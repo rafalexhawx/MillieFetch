@@ -1,6 +1,3 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-<<<<<<< HEAD
 User-agent: *
 Disallow: /
-=======
->>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
