@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.0].define(version: 2022_04_28_230244) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+=======
 ActiveRecord::Schema[7.0].define(version: 2022_04_03_195005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
   create_table "contents", force: :cascade do |t|
     t.text "content_path"
     t.bigint "folder_id", null: false
@@ -47,6 +61,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_195005) do
     t.index ["folder_id"], name: "index_metadata_on_folder_id"
   end
 
+<<<<<<< HEAD
+  create_table "searchwords", force: :cascade do |t|
+    t.bigint "folder_id", null: false
+    t.text "word"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.text "session_hash", null: false
+    t.text "otp_hash", null: false
+  end
+
+=======
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
   add_foreign_key "contents", "folders"
   add_foreign_key "contents", "metadata"
   add_foreign_key "metadata", "folders"

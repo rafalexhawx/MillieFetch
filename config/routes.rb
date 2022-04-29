@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  get 'upload/view'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "/admin", to: "admin#index"
+  get "/login_otp", to: "login#view"
+  post "/login_otp", to: "login#verify"
+  get "/otp_yubico", to: "admin#otp"
+  get "/upload_page", to: "upload#view"
+  # Defines the root path route ("/")
+  # root "articles#index"
+=======
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -15,4 +26,5 @@ Rails.application.routes.draw do
   resources :folders
   resources :cart
   resources :id
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
 end

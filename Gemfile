@@ -78,6 +78,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', require: false
+end
+
+gem 'carrierwave'
+gem 'bcrypt'
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "rspec-rails"
@@ -85,4 +90,4 @@ group :test do
   gem "rspec-core"
   gem "rails-controller-testing"
   gem 'simplecov', require: false
-end
+

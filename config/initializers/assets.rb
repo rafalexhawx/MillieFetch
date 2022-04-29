@@ -2,6 +2,10 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = "1.0"
+<<<<<<< HEAD
+Rails.application.config.assets.precompile += %w(otp_capture.js)
+=======
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
