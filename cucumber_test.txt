@@ -1,0 +1,72 @@
+Using the default profile...
+Feature: Cart feature which can store the folders that users want to download
+
+  Scenario: The user can add the folder into the cart                                                                  # features/cart.feature:3
+    Given The user is on the main page                                                                                 # features/step_definitions/cart_step.rb:2
+soviet
+    When The user enters "soviet" in the search bar                                                                    # features/step_definitions/cart_step.rb:10
+    And The user clicks search button                                                                                  # features/step_definitions/cart_step.rb:15
+    And The user clicks add button of a first folder                                                                   # features/step_definitions/cart_step.rb:23
+    Then A yellow notice that says "The folder is added to your cart!" is seen below the navigation bar                # features/step_definitions/cart_step.rb:32
+    And The user should see "Soviet Power Collapse in Eastern Europe - Strategic Arms Control (June 1990)" in the cart # features/step_definitions/cart_step.rb:36
+
+  Scenario: The user can remove the folder from the cart                                                                    # features/cart.feature:11
+    Given The user is on the main page                                                                                      # features/step_definitions/cart_step.rb:2
+soviet
+    When The user enters "soviet" in the search bar                                                                         # features/step_definitions/cart_step.rb:10
+    And The user clicks search button                                                                                       # features/step_definitions/cart_step.rb:15
+    And The user clicks add button of a first folder                                                                        # features/step_definitions/cart_step.rb:23
+    And The user clicks the Cart button in the navigation bar                                                               # features/step_definitions/cart_step.rb:19
+    And The user clicks remove button of the folder in the cart.                                                            # features/step_definitions/cart_step.rb:28
+    Then The user should not see "Soviet Power Collapse in Eastern Europe - Strategic Arms Control (June 1990)" in the cart # features/step_definitions/cart_step.rb:40
+    And A yellow notice that says "The folder is removed from your cart!" is seen below the navigation bar                  # features/step_definitions/cart_step.rb:32
+
+Feature: Search folders relevant to a topic
+    Given I am on the main page
+    So that I find relevant information to a seach topic of interest
+    I should be able to enter the query and search to see relevant results
+
+  Scenario: Show all the folder names related to Donald Trump's Foreign policy                                  # features/nl_search.feature:9
+    Given I am on the main page                                                                                 # features/step_definitions/nl_search_step.rb:2
+soviet's loss of power in eastern europe
+    When I enter "soviet's loss of power in eastern europe" in the search bar                                   # features/step_definitions/nl_search_step.rb:6
+    And I click search                                                                                          # features/step_definitions/nl_search_step.rb:11
+    Then I should be redirected to "search" page                                                                # features/step_definitions/nl_search_step.rb:15
+    And I should see "Soviet Power Collapse in Eastern Europe - Strategic Arms Control (June 1990)"             # features/step_definitions/nl_search_step.rb:23
+    And I should see "USSR Collapse: U.S - Soviet Relations Thru 1991 (October 1990)"                           # features/step_definitions/nl_search_step.rb:23
+    And I should see "Soviet Power Collapse in Eastern Europe (July - August 1990)" names listed in the results # features/step_definitions/nl_search_step.rb:28
+    And I should not see "Presidential Meetings - Memorandum of Conversations 05/03/91 - 06/28/91"              # features/step_definitions/nl_search_step.rb:32
+    And I should not see "Desert Shield/Desert Storm (August 1990) Part I" names in the results                 # features/step_definitions/nl_search_step.rb:36
+
+Feature: Prompt for valid query, incase the user enters invalid query at first
+    Given the user is on the MilleFetch main page
+    When they enter an invalid query (blacnk or whitespaces)
+    Then the user should be prompted to try again with valid query
+
+  Scenario: Prompt to enter a valid query, incase they searched without enterting anything the first time # features/search_valid.feature:8
+    Given I am on the main page                                                                           # features/step_definitions/nl_search_step.rb:2
+    When I click search                                                                                   # features/step_definitions/nl_search_step.rb:11
+    #Then I should see the message "Enter valid query"
+    #And I should be redirected to the main page
+    Then I should be redirected to the main page                                                          # features/step_definitions/search_valid_step.rb:13
+    And I should be prompted "Enter valid query"                                                          # features/step_definitions/search_valid_step.rb:9
+
+  Scenario: Prompt to enter a valid query, incase the user searches with a whitespace query the first time # features/search_valid.feature:16
+    Given I am on the main page                                                                            # features/step_definitions/nl_search_step.rb:2
+     
+    When I enter "     " in the search bar                                                                 # features/step_definitions/nl_search_step.rb:6
+    And I click search                                                                                     # features/step_definitions/nl_search_step.rb:11
+    Then I should be redirected to the main page                                                           # features/step_definitions/search_valid_step.rb:13
+    And I should be prompted "Enter valid query"                                                           # features/step_definitions/search_valid_step.rb:9
+
+5 scenarios (5 passed)
+32 steps (32 passed)
+0m2.209s
+Coverage report generated for Cucumber Features to /home/ubuntu/environment/MillieFetch/coverage. 62 / 82 LOC (75.61%) covered.
+
+0 scenarios
+0 steps
+0m0.000s
+
+The --wip switch was used, so the failures were expected. All is good.
+Coverage report generated for Cucumber Features to /home/ubuntu/environment/MillieFetch/coverage. 0 / 107 LOC (0.0%) covered.

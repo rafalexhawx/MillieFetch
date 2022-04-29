@@ -6,6 +6,13 @@ require "active_support/core_ext/integer/time"
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+<<<<<<< HEAD
+=======
+  # Configure 'rails notes' to inspect Cucumber files
+  config.annotations.register_directories('features')
+  config.annotations.register_extensions('feature') { |tag| /#\s*(#{tag}):?\s*(.*)$/ }
+
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
@@ -15,7 +22,11 @@ Rails.application.configure do
   # this probably isn't necessary. It's a good idea to do in a continuous integration
   # system, or in some way before deploying your code.
   config.eager_load = ENV["CI"].present?
+<<<<<<< HEAD
   config.eager_load = true
+=======
+
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {

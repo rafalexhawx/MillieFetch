@@ -1,6 +1,13 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+<<<<<<< HEAD
+=======
+  # Configure 'rails notes' to inspect Cucumber files
+  config.annotations.register_directories('features')
+  config.annotations.register_extensions('feature') { |tag| /#\s*(#{tag}):?\s*(.*)$/ }
+
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -58,6 +65,10 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+<<<<<<< HEAD
+=======
+  #config.hosts << "eacb5f1a304e46a39338303a547d1bb7.vfs.cloud9.us-east-1.amazonaws.com"
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
@@ -67,4 +78,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+<<<<<<< HEAD
+=======
+  config.hosts << "eacb5f1a304e46a39338303a547d1bb7.vfs.cloud9.us-east-1.amazonaws.com"
+
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
 end
