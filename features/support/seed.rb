@@ -29,51 +29,51 @@
 #     Folder.create!(folder)
 # end
 
-# require 'simple_xlsx_reader'
-# #puts Dir.pwd
+require 'simple_xlsx_reader'
+#puts Dir.pwd
 
-# workbook = SimpleXlsxReader.open 'db/ScowcroftCollection.xlsx'
-# worksheets = workbook.sheets
-# puts "Found #{worksheets.count} worksheets"
+workbook = SimpleXlsxReader.open 'db/ScowcroftCollection.xlsx'
+worksheets = workbook.sheets
+puts "Found #{worksheets.count} worksheets"
 
-# worksheets.each do |worksheet|
-#   puts "Reading: #{worksheet.name}"
-#   num_rows = 0
-#   total_rows = worksheet.rows.count
-#   sample_rows = (1...total_rows).to_a.sample(200, random: Random.new(22))
-#   #puts sample_rows
-#   #puts 'end'
-#   #puts worksheet.rows[3]
+worksheets.each do |worksheet|
+  puts "Reading: #{worksheet.name}"
+  num_rows = 0
+  total_rows = worksheet.rows.count
+  sample_rows = (1...total_rows).to_a.sample(200, random: Random.new(22))
+  #puts sample_rows
+  #puts 'end'
+  #puts worksheet.rows[3]
 
-#   sample_rows.each do |r|
-#     row_cells = worksheet.rows[r]
+  sample_rows.each do |r|
+    row_cells = worksheet.rows[r]
 
-#     Folder.create!(
-#         folder_title: row_cells[3]
-#     )
+    Folder.create!(
+        folder_title: row_cells[3]
+    )
 
-#     Metadatum.create!(
-#         FOIA_ID: row_cells[0],
-#         local_id: row_cells[1],
-#         status: row_cells[2],
-#         record_collection: row_cells[4],
-#         office_origin: row_cells[5],
-#         series: row_cells[6],
-#         subseries: row_cells[8],
-#         box_type: row_cells[7],
-#         box_number: row_cells[10],
-#         note_field: row_cells[9],
-#         folder_id: Folder.maximum(:id)
-#     )
+    Metadatum.create!(
+        FOIA_ID: row_cells[0],
+        local_id: row_cells[1],
+        status: row_cells[2],
+        record_collection: row_cells[4],
+        office_origin: row_cells[5],
+        series: row_cells[6],
+        subseries: row_cells[8],
+        box_type: row_cells[7],
+        box_number: row_cells[10],
+        note_field: row_cells[9],
+        folder_id: Folder.maximum(:id)
+    )
 
-#     Content.create!(
-#         content_path: '/file/' + row_cells[3] + '/sample.pdf',
-#         metadatum_id: Metadatum.maximum(:id),
-#         folder_id: Folder.maximum(:id)
-#     )
+    Content.create!(
+        content_path: '/file/' + row_cells[3] + '/sample.pdf',
+        metadatum_id: Metadatum.maximum(:id),
+        folder_id: Folder.maximum(:id)
+    )
 
 
-#     #puts row_cells[3]
-#   end
+    #puts row_cells[3]
+  end
   
-# end
+end
