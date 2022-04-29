@@ -7,6 +7,7 @@ require 'base64';
 
 class AdminController < ApplicationController
   def index    #the /admin page
+      render layout: false
   end
 
   def otp

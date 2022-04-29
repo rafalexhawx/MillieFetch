@@ -21,9 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_230244) do
     t.datetime "updated_at", null: false
   end
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "contents", force: :cascade do |t|
     t.text "content_path"
     t.bigint "folder_id", null: false
@@ -57,14 +54,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_230244) do
     t.index ["folder_id"], name: "index_metadata_on_folder_id"
   end
 
-  create_table "searchwords", force: :cascade do |t|
-    t.bigint "folder_id", null: false
-    t.text "word"
-  end
-
   create_table "sessions", force: :cascade do |t|
-    t.text "session_hash", null: false
-    t.text "otp_hash", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "contents", "folders"

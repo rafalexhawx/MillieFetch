@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.0"
+ruby "2.7.5"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 #excel reader
 gem "simple_xlsx_reader"
+gem "rubyzip"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -78,11 +79,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'simplecov', require: false
-end
-
-gem 'carrierwave'
-gem 'bcrypt'
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "rspec-rails"
@@ -90,4 +86,6 @@ gem 'bcrypt'
   gem "rspec-core"
   gem "rails-controller-testing"
   gem 'simplecov', require: false
+  gem 'bcrypt'
 
+end

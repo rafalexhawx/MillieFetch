@@ -11,9 +11,14 @@
     <li>
         <%= search.folder_title %> - 
         <%= link_to 'Remove from cart', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
+        <% search.metadatum.folder_id %>
+        
+        <br>
+        <br>
         <br>
     </li>
     <% end %>
+
 </ul>
 <% end %>
 
@@ -21,7 +26,7 @@
 <br>
 <br>
 
-<%= link_to 'Go to the Search', root_path %>
+<% link_to 'Go to the Search', root_path %>
 
 <br>
 

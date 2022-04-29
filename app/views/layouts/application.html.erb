@@ -25,46 +25,23 @@
   </head>
 
   <body>
-
+    <% unless action_name == "admin/index" %>
     <%= render "folders/header"%>
+    
+
       <% if notice %>
-        <script type="text/javascript">
-        $(document).ready(function(){
-        //Check if the current URL contains '#'
-        if(document.URL.indexOf("#")==-1){
-        // Set the URL to whatever it was plus "#".
-        url = document.URL+"#";
-        location = "#";
-        //Reload the page
+              <%= render 'layouts/alerts' %>
+
         
-        setTimeout(function () 
-        { location.reload(true); }, 1500);
-        }  
-        });
-        </script>
-        <%= render 'layouts/alerts' %>
-      <% else %>
-        <script type="text/javascript">
-        $(document).ready(function(){
-        //Check if the current URL contains '#'
-        if(document.URL.indexOf("#")==-1){
-        // Set the URL to whatever it was plus "#".
-        url = document.URL+"#";
-        location = "#";
-        //Reload the page
-        
-        setTimeout(function () 
-        { location.reload(true); }, 100);
-        }  
-        });
-        </script>
       <% end %>
+          <% end %>
+
 <br/>
 <!--<%= debug session[:cart]%>-->
 <!--<p>You have visited this site <%= pluralize @visit_count, 'time' %>.</p>-->
       <% if notice %>
       <% end %>
-
+<br><br>
     <%= yield %>
     
 
