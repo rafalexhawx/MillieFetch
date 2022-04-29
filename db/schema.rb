@@ -21,7 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_230244) do
     t.datetime "updated_at", null: false
   end
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_195005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
