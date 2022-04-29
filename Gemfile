@@ -79,7 +79,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'simplecov', require: false
-
+end
 
 gem 'carrierwave'
 gem 'bcrypt'
@@ -90,4 +90,4 @@ gem 'bcrypt'
   gem "rspec-core"
   gem "rails-controller-testing"
   gem 'simplecov', require: false
-end
+
