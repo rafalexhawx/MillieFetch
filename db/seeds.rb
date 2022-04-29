@@ -3,7 +3,6 @@
 #
 # Examples:
 #
-<<<<<<< HEAD
 #   movies = Movie.create([{ name: "Star Wars" , name: "Lord of the Rings", salt) )
 #   Character.create(name: "Luke", movie: movies.first)
 salt = "$2a$12$wtuYetyze2U24iIEvOGb3O"
@@ -73,7 +72,6 @@ Account.create(username: "GeorgeBush" , password_digest:  BCrypt::Engine.hash_se
 Account.create(username: "GeorgeHWBush" , password_digest:  BCrypt::Engine.hash_secret("e3f0d911a8bacb24e50332638c1a686d34b18236464b3cb5478384df04d67d4f", salt) )
 
 puts("End of database seeding")
-=======
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
@@ -148,4 +146,3 @@ worksheets.each do |worksheet|
   end
   
 end
->>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
