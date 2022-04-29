@@ -27,15 +27,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-<<<<<<< HEAD
-=======
 # try installing ferret and act_as_ferret for search engine application
 #gem "pagy"
 
 gem "kaminari"
 gem "nokogiri"
 
->>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -51,12 +48,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-<<<<<<< HEAD
-=======
 #excel reader
 gem "simple_xlsx_reader"
 
->>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -84,13 +78,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-<<<<<<< HEAD
   gem 'simplecov', require: false
-end
+
 
 gem 'carrierwave'
 gem 'bcrypt'
-=======
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "rspec-rails"
@@ -99,4 +91,3 @@ gem 'bcrypt'
   gem "rails-controller-testing"
   gem 'simplecov', require: false
 end
->>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
