@@ -32,6 +32,8 @@ gem "jbuilder"
 
 gem "kaminari"
 gem "nokogiri"
+gem "rubyzip"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
