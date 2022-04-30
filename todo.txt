@@ -1,0 +1,7 @@
+Admin account verification
+	Generate the accounts [DONE]
+	Verify only admin account
+Upload page [To be done]
+
+Wednesday's meeting: merge everything together on the Bush Server and see how it behaves
+

@@ -32,6 +32,8 @@ gem "jbuilder"
 
 gem "kaminari"
 gem "nokogiri"
+gem "rubyzip"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -50,6 +52,7 @@ gem "bootsnap", require: false
 
 #excel reader
 gem "simple_xlsx_reader"
+gem "rubyzip"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -85,4 +88,6 @@ group :test do
   gem "rspec-core"
   gem "rails-controller-testing"
   gem 'simplecov', require: false
+  gem 'bcrypt'
+
 end

@@ -1,0 +1,16 @@
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20220428-3624-sxln8l.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR=" clean
+
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR="
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20220428-3624-14xj543
