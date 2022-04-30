@@ -71,8 +71,6 @@ worksheets.each do |worksheet|
         metadatum_id: Metadatum.maximum(:id),
         folder_id: Folder.maximum(:id)
     )
-
-
     #puts row_cells[3]
   end
   
