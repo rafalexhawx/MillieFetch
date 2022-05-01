@@ -136,9 +136,9 @@ worksheets.each do |worksheet|
         folder_id: Folder.maximum(:id)
     )
     if count % 2 == 0
-      pather = 'sample_1.pdf'
+      pather = '/assets/sample_1.pdf'
     else
-      pather = 'sample_2.pdf'
+      pather = '/assets/sample_2.pdf'
     end
     Content.create!(
         content_path: pather,

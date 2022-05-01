@@ -21,7 +21,7 @@ if(event.key == "Enter") {
     //if this returns ok, do local verification using SHA1-HMAC 
     //if SHA1-HMAC is ok, navigate to '/otp_verify'
     if(j['status'] == 'status=OK') {
-        window.location.href='/upload_page'
+        window.location.href='/uploads/index'
         //alert("Yubikey OK");
     } else {
         alert("Error with the yubikey, please try again");
