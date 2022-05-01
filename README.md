@@ -1,42 +1,24 @@
-<<<<<<< HEAD
-#Authentication Branch
+Intro: https://github.com/rafalexhawx/MillieFetch
 
-* This branch corresponds to everything that has to do with security and authentication
-=======
-<<<<<<< HEAD
-# README
+In this git repository, you can build MillieFetch application as following instruction.
+•	Whenever you start working on a Rails project, the first thing you should do is git clone the repository. You may use HTTPS or SSH to git clone our repo. 
+-	HTTPS: https://github.com/rafalexhawx/MillieFetch.git
+-	SSH: git@github.com:rafalexhawx/MillieFetch.git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+•	And, make sure that you are using ruby version  2.7.5 for this application
 
-Things you may want to cover:
+$ ruby -v
 
-* Ruby version
+•	The second things to do is to run Bundler, to make sure all the app's gems are installed. Switch to the app's root directory (presumably /Milliefetch) and run bundle install --without production (you only need to specify --without production the first time, as this setting will be remembered on future runs of Bundler for this project).
 
-* System dependencies
+$ Bundle install
 
-* Configuration
+•	Finally, get the local database created:
 
-* Database creation
+$ rake db:migrate 
+The rake db:migrate command creates a local development database (following the specifications in config/database.yml) and runs the migrations in db/migrate to create the app's schema. It also creates/updates the file db/schema.rb to reflect the latest database schema. Note: it's important to keep this file under version control.
+•	Now insert "seed data" into the database--initial data items that the app needs to run:
 
-* Database initialization
+$ rake db:seed
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-#MillieFetch
-
-A Rails web app allowing users to navigate through the files of the bush library online.
-Users will be able to:
-Search for a file
-Store their search results
-Admins will be able to:
-Login
-Upload files
->>>>>>> 13640d635d603b2570c8c698520dc8ce36ba78f4
->>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
+The $ rake db:seed RAILS_ENV=’test’  command can populate the test db.
