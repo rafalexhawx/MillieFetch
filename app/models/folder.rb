@@ -18,7 +18,7 @@ class Folder < ApplicationRecord
         #searches = self.where(folder_id: folder_id).order("array_position(array[#{folder_id.join(',')}], folder_id)")
 
         ###### This code we may want to move it as seperate preprocessing function
-        stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into', 'of', 'and', 'or']
+        stop_words = ['a', 'an', 'the', 'is', 'on', 'in', 'into', 'of', 'and', 'or', 'for']
         words = se_query.split(' ').map{ |x| x.downcase}
         #words = se_query.split(' ')
         stripped_words = []
@@ -56,6 +56,7 @@ class Folder < ApplicationRecord
         folder_ids = folder_ids.keys
         
         searches = self.where(id:folder_ids).joins(:metadatum)
+        searches = searches.where(id:folder_ids).joins(:contents)
         searches = folder_ids.collect {|id| searches.detect {|x| x.id == id}}
 
         return searches

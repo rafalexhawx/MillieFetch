@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+#Authentication Branch
+
+* This branch corresponds to everything that has to do with security and authentication
+=======
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -34,3 +39,4 @@ Admins will be able to:
 Login
 Upload files
 >>>>>>> 13640d635d603b2570c8c698520dc8ce36ba78f4
+>>>>>>> 018d1e4acc635e72e836cd1c302c20422618f722
