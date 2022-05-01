@@ -1,5 +1,6 @@
 class UploadController < ApplicationController
   def view
+    @cart = []
     s = Session.first
     if session.has_key?('login_auth') == false || s.nil?
       puts('No session found (on browser side)')

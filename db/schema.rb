@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_230244) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
+    t.text "username"
+    t.text "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,8 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_28_230244) do
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "session_hash", null: false
+    t.text "otp_hash", null: false
   end
 
   add_foreign_key "contents", "folders"
