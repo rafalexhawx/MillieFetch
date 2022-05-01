@@ -17,8 +17,12 @@ class FoldersController < ApplicationController
     end
   end
 
-  #def pdfview
-  #  if params[:]
+  def display_url
+    if params[:folder_id]
+      docs = Content.where(folder_id:params[:folder_id])
+      redirect_to docs.collect(&:content_path)[0]
+    end
+  end
   
   def cart
   end

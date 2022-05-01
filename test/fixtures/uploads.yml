@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  FOIA_ID: 1
+  folder_title: MyText
+  local_id: MyText
+  status: MyText
+  record_collection: MyText
+  office_origin: MyText
+  series: MyText
+  subseries: MyText
+  box_type: MyText
+  box_number: 1
+  note_field: MyText
+  attachment: MyString
+
+two:
+  FOIA_ID: 1
+  folder_title: MyText
+  local_id: MyText
+  status: MyText
+  record_collection: MyText
+  office_origin: MyText
+  series: MyText
+  subseries: MyText
+  box_type: MyText
+  box_number: 1
+  note_field: MyText
+  attachment: MyString

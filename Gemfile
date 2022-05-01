@@ -27,6 +27,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#Build upload page for ruby applications
+gem 'carrierwave'   
+gem 'bootstrap-sass'  
+
 # try installing ferret and act_as_ferret for search engine application
 #gem "pagy"
 
