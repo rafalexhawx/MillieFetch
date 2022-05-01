@@ -21,9 +21,13 @@ class LoginController < ApplicationController
     salt = "$2a$12$wtuYetyze2U24iIEvOGb3O" #MUST FIND WAY TO OBFUSCATE THIS PART
 
     @p_verif = Account.where(username: @username).first
-    #if @p_verif.nil? #Username does not exist in database
-    #  return false #Send user back to admin page
-    #end
+    pp @p_verif
+    if @p_verif.nil? == true #Username does not exist in database
+      puts("Username not found")
+      flash[:warning] = "Wrong username or password"
+      redirect_to '/admin' 
+      return
+    end
     #pp @p_verif
     @hex = Digest::SHA256.hexdigest(@p)
     @hex = BCrypt::Engine.hash_secret(@hex, salt)
