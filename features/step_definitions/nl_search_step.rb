@@ -25,10 +25,22 @@ Then('I should see {string}') do |string|
   #puts string
   page_text = Nokogiri::HTML(page.body).text
   page_data = Nokogiri::HTML.parse(page.body)
-  
+  #puts page_text.class
+  #puts page_data
+  #puts page_data.xpath('//a[@target="_blank"]').to_s
+  #puts Array(page_data.xpath('//a/text()'))[0]
+  # l = []
+  # page_data.xpath('//a/text()').each do |d|
+  #   l.append(d.to_s)
+  # end
+  #puts doc.search('dt').xpath('text()')
+  #puts page_data.xpath('//td//a[@target="_blank"]/text()')
   while page_text.include? "Next"
-    str = string + "</td>"
-    if page_data.xpath('//td').to_s.split('<td>').include? str
+    l = []
+    page_data.xpath('//td//a[@target="_blank"]/text()').each do |d|
+      l.append(d.to_s)
+    end
+    if l.include? string
       contain = 1
       print("entered here")
       break
@@ -53,8 +65,11 @@ Then('I should see {string} names listed in the results') do |string|
   page_data = Nokogiri::HTML.parse(page.body)
   
   while page_text.include? "Next"
-    str = string + "</td>"
-    if page_data.xpath('//td').to_s.split('<td>').include? str
+    l = []
+    page_data.xpath('//td//a[@target="_blank"]/text()').each do |d|
+      l.append(d.to_s)
+    end
+    if l.include? string
       contain = 1
       print("entered here")
       break
@@ -79,8 +94,11 @@ Then('I should not see {string}') do |string|
   page_data = Nokogiri::HTML.parse(page.body)
   
   while page_text.include? "Next"
-    str = string + "</td>"
-    if page_data.xpath('//td').to_s.split('<td>').include? str
+    l = []
+    page_data.xpath('//td//a[@target="_blank"]/text()').each do |d|
+      l.append(d.to_s)
+    end
+    if l.include? string
       contain = 1
       print("entered here")
       break
@@ -105,8 +123,11 @@ Then('I should not see {string} names in the results') do |string|
   page_data = Nokogiri::HTML.parse(page.body)
   
   while page_text.include? "Next"
-    str = string + "</td>"
-    if page_data.xpath('//td').to_s.split('<td>').include? str
+    l = []
+    page_data.xpath('//td//a[@target="_blank"]/text()').each do |d|
+      l.append(d.to_s)
+    end
+    if l.include? string
       contain = 1
       print("entered here")
       break

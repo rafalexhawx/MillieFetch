@@ -22,7 +22,7 @@
     <% @searches.each do |search| %>
         <tr>
             <td><%= search.metadatum.FOIA_ID %></td>
-            <td><%= search.folder_title %></td>
+            <td><%= link_to search.folder_title, '/assets/' + search.contents.collect(&:content_path)[0].to_s, target: "_blank" %></td>
             <td><%= search.metadatum.local_id %></td>
             <td><%= search.metadatum.record_collection %></td>
             <td><%= search.metadatum.office_origin %></td>

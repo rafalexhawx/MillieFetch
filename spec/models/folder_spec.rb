@@ -7,6 +7,8 @@ RSpec.describe Folder, type: :model do
       @titles = []
       searches.each do |search|
         #puts search.
+        #c = search.contents
+        #puts c.inspect
         @titles.append(search.folder_title)
       end
     end

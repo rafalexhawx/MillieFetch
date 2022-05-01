@@ -10,15 +10,15 @@ class FoldersController < ApplicationController
   
   def search
     if params[:query].strip.empty?
-      #flash[:notice]  = "Enter valid query"
-      #redirect_to action: "index", notice: "Enter valid query"
       redirect_to root_path, notice: "Enter valid query"
     elsif  
       search_results = Folder.search_folders(params[:query])
       @searches = Kaminari.paginate_array(search_results).page(params[:page]).per(7)
-      #puts @searches
     end
   end
+
+  #def pdfview
+  #  if params[:]
   
   def cart
   end

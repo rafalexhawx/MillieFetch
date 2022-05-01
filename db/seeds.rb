@@ -105,6 +105,7 @@ workbook = SimpleXlsxReader.open 'db/ScowcroftCollection.xlsx'
 worksheets = workbook.sheets
 puts "Found #{worksheets.count} worksheets"
 
+count = 0
 worksheets.each do |worksheet|
   puts "Reading: #{worksheet.name}"
   num_rows = 0
@@ -134,13 +135,18 @@ worksheets.each do |worksheet|
         note_field: row_cells[9],
         folder_id: Folder.maximum(:id)
     )
-
+    if count % 2 == 0
+      pather = 'sample_1.pdf'
+    else
+      pather = 'sample_2.pdf'
+    end
     Content.create!(
-        content_path: '/file/' + row_cells[3] + '/sample.pdf',
+        content_path: pather,
         metadatum_id: Metadatum.maximum(:id),
         folder_id: Folder.maximum(:id)
     )
 
+    count = count + 1
 
     #puts row_cells[3]
   end
