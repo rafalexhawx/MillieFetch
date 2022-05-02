@@ -1,5 +1,4 @@
 class FoldersController < ApplicationController
-  #include Pagy::Backend
   before_action :initialize_session
   before_action :increment_visit_count, only: %i[index, about]
   before_action :load_cart
@@ -9,6 +8,7 @@ class FoldersController < ApplicationController
   end
   
   def search
+    ## query for search results and paginate them
     if params[:query].strip.empty?
       redirect_to root_path, notice: "Enter valid query"
     elsif  
@@ -18,6 +18,7 @@ class FoldersController < ApplicationController
   end
 
   def display_url
+    ### this is an abstraction for displaying the pdf embedded under the folder names
     if params[:folder_id]
       docs = Content.where(folder_id:params[:folder_id])
       redirect_to docs.collect(&:content_path)[0]
