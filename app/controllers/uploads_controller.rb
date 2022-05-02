@@ -24,6 +24,8 @@ class UploadsController < ApplicationController
   
   def create
     @upload= Upload.new(upload_params)
+    render layout: false
+
     if @upload.save
       Folder.new(:folder_title=> @upload.folder_title).save
       Metadatum.new(:FOIA_ID=> @upload.FOIA_ID,
