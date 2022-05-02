@@ -1,16 +1,16 @@
 class UploadsController < ApplicationController
   def index
     #@uploads = Upload.all
-    # s = Session.first
-    # if session.has_key?('login_auth') == false || s.nil?
-    #   puts('No session found (on browser side)')
-    #   redirect_to '/admin'
-    # elsif session[:login_auth] != s[:session_hash] || session[:otp_hash] != s[:otp_hash]
-    #   puts('Wrong session hash')
-    #   redirect_to '/admin'
-    # end
-    # Session.delete_all #Destroys session in database (no longer needed since user verified)
-    # reset_session #Destroys session in browser
+    s = Session.first
+    if session.has_key?('login_auth') == false || s.nil?
+      puts('No session found (on browser side)')
+      redirect_to '/admin'
+    elsif session[:login_auth] != s[:session_hash] || session[:otp_hash] != s[:otp_hash]
+      puts('Wrong session hash')
+      redirect_to '/admin'
+    end
+    Session.delete_all #Destroys session in database (no longer needed since user verified)
+    reset_session #Destroys session in browser
 
     render layout: false
   end
@@ -24,7 +24,7 @@ class UploadsController < ApplicationController
   
   def create
     @upload= Upload.new(upload_params)
-    render layout: false
+    #render layout: false
 
     if @upload.save
       Folder.new(:folder_title=> @upload.folder_title).save
