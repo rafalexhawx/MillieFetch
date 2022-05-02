@@ -14,27 +14,6 @@
           <li class="nav-item">
             <%= link_to 'My Cart', folders_cart_path, class:"nav-link"%>
           </li>
-          <li class="dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-            <div class="dropdown-menu col-xs-12 " style= "white-space: nowrap;">
-              <% if @cart.empty? %>
-            <p> No items in cart.</p>
-              <% else %>
-              <ul>
-            <% @cart.each do |search| %>
-            <li>
-                <%= search.folder_title %> - 
-                <%= link_to 'Remove', remove_from_cart_path(search.metadatum.folder_id), method: :delete %>
-                <br>
-            </li>
-            <% end %>
-        </ul>
-        <% end %>
-            </div>
-          </li>
-
-        
-        
       </ul>
 
     </div>

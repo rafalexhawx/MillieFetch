@@ -32,22 +32,16 @@
       <% if notice %>
               <%= render 'layouts/alerts' %>
 
-        
       <% end %>
           <% end %>
 
 <br/>
 <!--<%= debug session[:cart]%>-->
 <!--<p>You have visited this site <%= pluralize @visit_count, 'time' %>.</p>-->
-      <% if notice %>
-      <% end %>
+
 <br><br>
 
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>">
-    <%= value %>
-  </div>
-<% end %>
+
 
     <%= yield %>
     

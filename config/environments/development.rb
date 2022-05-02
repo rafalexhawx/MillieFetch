@@ -62,6 +62,8 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  config.hosts << "eacb5f1a304e46a39338303a547d1bb7.vfs.cloud9.us-east-1.amazonaws.com"
+
   # config.hosts << "0d4513af289048cd9ecc157ba0daf478.vfs.cloud9.us-east-1.amazonaws.com"
 
   # Raises error for missing translations.

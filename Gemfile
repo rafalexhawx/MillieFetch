@@ -36,7 +36,6 @@ gem 'bootstrap-sass'
 
 gem "kaminari"
 gem "nokogiri"
-gem "rubyzip"
 
 
 # Use Redis adapter to run Action Cable in production
