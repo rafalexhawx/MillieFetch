@@ -9,6 +9,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible for uploaders that are meant to be mounted:
+  # This stores the path of newly uploaded documents
   def store_dir
     "assets" 
   end

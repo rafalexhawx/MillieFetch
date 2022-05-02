@@ -30,7 +30,7 @@
 <br> 
 
 <h1>Upload your document</h1>
-
+<!--shows error if upload paramneters not entered -->
 <div class="container">   
 <% if !@upload.errors.empty? %>   
    <div>   
@@ -42,7 +42,8 @@
    <% end %> 
 
 
-<div>   
+<div> 
+<!--upload form with sample dropdown data for user to choose from choices or enter own details-->
    <%= form_for @upload, html: { multipart: true } do |f| %> 
       <br>
       <%= f.label :Folder_Title %>   

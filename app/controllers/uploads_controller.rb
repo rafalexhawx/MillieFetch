@@ -15,15 +15,15 @@ class UploadsController < ApplicationController
 
   def new
     @upload= Upload.new
-    #puts "lol"
     render layout: false
     #redirect_to new_upload_path
   end
   
   def create
+    # creates a new empty model Upload with upload parameters
     @upload= Upload.new(upload_params)
     #render layout: false
-
+    #Save upload parameters into uploads, folders, metadata and contents tables
     if @upload.save
       Folder.new(:folder_title=> @upload.folder_title).save
       Metadatum.new(:FOIA_ID=> @upload.FOIA_ID,
@@ -42,18 +42,20 @@ class UploadsController < ApplicationController
                   :folder_id=>Folder.maximum(:id)).save
       redirect_to uploads_path, notice: " The file #{@upload.FOIA_ID} is successfully uploaded."
     else
+      #renders the view new.html.erb
       render "new"
     end
   end
   
-
+  ## Deletes uploaded file
   # def destroy
   #   @upload = Upload.find(params[:id])
-    
   #   @upload.destroy
   #   redirect_to uploads_path, notice: "The file #{@upload.FOIA_ID} is successfully deleted!"
   # end
-  private   
+  
+  private 
+  # agrregates upload parameters and makes sure all required upload parameters are present
   def upload_params   
     params.require(:upload).permit(:FOIA_ID,:folder_title,:local_id,:status,:record_collection,:office_origin,:series,:subseries,:box_type,:box_number,:note_field,:attachment)   
   end 
