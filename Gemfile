@@ -29,7 +29,9 @@ gem "jbuilder"
 
 #Build upload page for ruby applications
 gem 'carrierwave'   
-gem 'bootstrap-sass'  
+gem 'bootstrap-sass' 
+gem "rubycritic", require: false, groups: [:development, :test]
+
 
 # try installing ferret and act_as_ferret for search engine application
 #gem "pagy"

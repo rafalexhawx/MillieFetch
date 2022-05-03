@@ -26,6 +26,7 @@ class FoldersController < ApplicationController
   end
   
   def cart
+    #### this zip the documents added to the cart and downloads them
     @checkout = Folder.find(session[:cart])
     respond_to do |format|
       format.html
@@ -43,6 +44,7 @@ class FoldersController < ApplicationController
   end
   
   def add_to_cart
+    ## responsible for adding search results to cart
     id = params[:id].to_i
     session[:cart] << id unless[:cart].include?(id)
     session[:cart] = session[:cart].uniq
@@ -50,6 +52,7 @@ class FoldersController < ApplicationController
   end
   
   def remove_from_cart
+    ### allows for removing the search results from cart
     id = params[:id].to_i
     session[:cart].delete(id)
     redirect_back_or_to root_path, notice: "The folder is removed from your cart!"

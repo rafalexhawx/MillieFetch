@@ -46,14 +46,7 @@ class UploadsController < ApplicationController
       render "new"
     end
   end
-  
-  ## Deletes uploaded file
-  # def destroy
-  #   @upload = Upload.find(params[:id])
-  #   @upload.destroy
-  #   redirect_to uploads_path, notice: "The file #{@upload.FOIA_ID} is successfully deleted!"
-  # end
-  
+    
   private 
   # agrregates upload parameters and makes sure all required upload parameters are present
   def upload_params   
