@@ -1,0 +1,19 @@
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/debug-1.5.0/ext/debug
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20220428-3624-1sop4zx.rb extconf.rb
+checking for rb_iseq_parameters(NULL, 0) in VALUE rb_iseq_parameters(void *, int is_proc);... yes
+checking for rb_iseq_code_location(NULL, NULL, NULL, NULL, NULL) in void rb_iseq_code_location(void *, int *first_lineno, int *first_column, int *last_lineno, int *last_column);... yes
+checking for rb_iseq_type(NULL) in VALUE rb_iseq_type(void *);... no
+creating Makefile
+
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/debug-1.5.0/ext/debug
+make "DESTDIR=" clean
+
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/debug-1.5.0/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /mnt/d/Documents/TAMU/Classes/Spring2022/CSCE 606/Project/authentication/vendor/bundle/ruby/2.7.0/gems/debug-1.5.0/ext/debug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220428-3624-3h13g2/debug
