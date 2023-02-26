@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-brand">George W. Bush Library: Research Site</div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <%= link_to 'Search', root_path, class:"nav-link" %>
+          </li>
+        
+          <li class="nav-item">
+            <%= link_to "My Cart (#{@cart.length.to_s})", folders_cart_path, class:"nav-link"%>
+          </li>
+          
+          <% if session.has_key?('login_auth') %>
+            <li class='nav-item'><%= link_to 'Log off', '/admin/logoff', class:"nav-link" %></li>
+            <li class='nav-item'><%= link_to 'Admin page', '/uploads/index', class:"nav-link" %></li>
+          <% end %>
+          
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
