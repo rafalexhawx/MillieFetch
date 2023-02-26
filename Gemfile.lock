@@ -212,10 +212,7 @@ GEM
     msgpack (1.5.1)
     msgpack (1.5.1-java)
     multi_test (0.1.2)
-<<<<<<< HEAD
     multi_xml (0.6.0)
-=======
->>>>>>> 0ea4f98542e2889db7c72c659a55ac5fd6319ed4
     net-imap (0.2.3)
       digest
       net-protocol
@@ -383,10 +380,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   debug
-<<<<<<< HEAD
   httparty
-=======
->>>>>>> 0ea4f98542e2889db7c72c659a55ac5fd6319ed4
   importmap-rails
   jbuilder
   kaminari
@@ -410,14 +404,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-<<<<<<< HEAD
    ruby 3.0.3p157
 
 BUNDLED WITH
    2.4.7
-=======
-   ruby 3.0.2p107
-
-BUNDLED WITH
-   2.1.4
->>>>>>> 0ea4f98542e2889db7c72c659a55ac5fd6319ed4
