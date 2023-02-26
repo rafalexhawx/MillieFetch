@@ -1,7 +1,11 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+<<<<<<< HEAD
 ruby "3.0.3"
+=======
+ruby "3.0.2"
+>>>>>>> 0ea4f98542e2889db7c72c659a55ac5fd6319ed4
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
@@ -36,7 +40,11 @@ gem 'bootstrap-sass'
 
 gem "kaminari"
 gem "nokogiri"
+<<<<<<< HEAD
 gem "httparty"
+=======
+
+>>>>>>> 0ea4f98542e2889db7c72c659a55ac5fd6319ed4
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

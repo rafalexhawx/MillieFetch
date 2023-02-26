@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Admin account verification
 	Generate the accounts [DONE]
 	Verify only admin account
@@ -5,3 +6,12 @@ Upload page [To be done]
 
 Wednesday's meeting: merge everything together on the Bush Server and see how it behaves
 
+=======
+Admin account verification
+	Generate the accounts [DONE]
+	Verify only admin account
+Upload page [To be done]
+
+Wednesday's meeting: merge everything together on the Bush Server and see how it behaves
+
+>>>>>>> 0ea4f98542e2889db7c72c659a55ac5fd6319ed4
